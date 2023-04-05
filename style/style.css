@@ -45,6 +45,9 @@ a:hover, a:active, a:focus {
 	font-family: COUTUREBold;
 }
 
+li {
+    margin-bottom: 10px;
+}
 
 .container {
 	width: 100%;
