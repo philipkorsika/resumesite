@@ -215,7 +215,7 @@
   </div>
 
   <div id="footer">
-    <div class="centerText"><p class="value">last updated: April 2023</p></div>
+      <div class="centerText"><p class="value">last updated: <span id="updated-date"></span></p></div>
   </div>
 
 </div>
@@ -245,6 +245,20 @@
 
     // Then update every 60 seconds
 	setInterval(updateTime, 60000);
+
+    function updateUpdated() {
+        var indexTimestamp = new Date(document.lastModified).getTime();
+        var lastModified = new Date(indexTimestamp);
+        var formattedDate = lastModified.toLocaleDateString('en-US', {
+           month: 'long',
+           year: 'numeric'
+        });
+
+        var dateElement = document.getElementById("updated-date");
+        dateElement.innerHTML = formattedDate;
+    }
+
+    updateUpdated();
 </script>
 
 </body>
