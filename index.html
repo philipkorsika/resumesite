@@ -204,7 +204,8 @@
             <br />
             <strong>phone: </strong>+64 22 037 4849<br />
             <strong>email: </strong><a href="mailto:philip.korsika@gmail.com?subject=resume request">philip.korsika@gmail.com</a><br />
-            <strong>location: </strong>Wellington, New Zealand (UTC+12/13)
+            <strong>location: </strong>Christchurch, New Zealand<br />
+            <strong>local time: </strong><span id="clock"></span>
         </td>
         <td>
           <div class="image-circle"><img src="./images/display.jpg" width="150" height="150" alt="Philip Korsika" /></div>
@@ -218,6 +219,33 @@
   </div>
 
 </div>
+
+<script>
+// Define a function to update the displayed time
+	function updateTime() {
+	  // Create a new Date object with the current date and time
+	  const now = new Date();
+
+	  // Define options for formatting the time string
+	  const options = { 
+		hour12: true,  // Use 12-hour time format
+		hour: 'numeric', // Show the hour in numeric format
+		minute: 'numeric' // Show the minute in numeric format
+	  };
+
+	  // Format the time string using the current time and options
+	  const timeStr = now.toLocaleTimeString('en-NZ', options);
+
+	  // Update the text content of the span element with the formatted time string
+	  document.getElementById('clock').textContent = timeStr;
+	}
+
+	// Call the updateTime function immediately to display the current time
+	updateTime();
+
+    // Then update every 60 seconds
+	setInterval(updateTime, 60000);
+</script>
 
 </body>
 </html>
